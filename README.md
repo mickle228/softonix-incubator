@@ -18,7 +18,7 @@ This section represents onboarding to the tools and technologies Softonix is use
 - Practice top shortcuts for VSCode: [link](https://www.desuvit.com/11-vscode-keyboard-shortcuts-that-will-boost-your-productivity/)
 
 ### Video Material
-TBA
+[Youtube link](https://www.youtube.com/watch?v=tJ6RFnAkY5c)
 
 ### Section Playground
 - Branch name: [`section-1-tooling`](https://github.com/Softonix/softonix-incubator/tree/section-1-tooling)
