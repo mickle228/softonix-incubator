@@ -13,8 +13,8 @@ This section represents an introduction to modern javascript concepts and patter
 
 ### Materials for the section
 - Practice: array methods [link](https://www.w3schools.com/js/js_array_methods.asp)
-Read: difference between micro and macro tasks in JS. [link](https://javascript.info/event-loop)
-Read: promises [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- Read: difference between micro and macro tasks in JS. [link](https://javascript.info/event-loop)
+- Read: promises [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ### Video Material
 TBA
