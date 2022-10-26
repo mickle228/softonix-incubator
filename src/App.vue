@@ -2,14 +2,20 @@
   <div class="app-container">
     <h3 class="font-medium m-0">Contact list</h3>
 
-    <div class="contact-list my-5">
-      <div class="contact-card rounded-lg bg-white shadow">
-        <div class="contact-card__body flex p-6 border-b border-gray-ultra-light">
+    <div class="contact-list grid gap-5 my-5">
+      <div class="contact-card rounded-lg bg-white shadow relative">
+        <div class="contact-card__body flex p-6 pb-2">
           <div class="contact-card__info flex-grow text-sm truncate">
-            <p class="font-medium">Jane Cooper</p>
-            <p class="text-gray mt-1 truncate">
-              Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
-            </p>
+            <template v-if="!isEdited">
+              <p class="font-medium">Jane Cooper</p>
+              <p class="text-gray mt-1 truncate">
+                Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
+              </p>
+            </template>
+            <template v-else>
+              <input ref="contactInput" type="text" value="Jane Cooper" class="block w-full font-medium">
+              <input type="text" value="Regional Paradigm Technician" class="block w-full text-gray mt-1">
+            </template>
           </div>
           <img
             class="contact-card__avatar w-[40px] h-[40px] object-cover ml-2 rounded-full shrink-0"
@@ -17,7 +23,31 @@
           >
         </div>
 
-        <div class="contact-card__footer flex text-sm font-medium text-gray-dark">
+        <div class="flex px-6 mb-4">
+          <span
+            v-if="isEdited"
+            class="text-gray font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="isEdited = false"
+          >
+            Cancel
+          </span>
+          <span
+            v-if="isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-4"
+            @click="isEdited = false"
+          >
+            Save
+          </span>
+          <span
+            v-if="!isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="selectEditView"
+          >
+            Edit
+          </span>
+        </div>
+
+        <div class="contact-card__footer flex text-sm font-medium text-gray-dark border-t border-gray-ultra-light">
           <div class="flex items-center justify-center flex-1 py-4 cursor-pointer hover:text-gray">
             <svg class="h-5 w-5 text-gray-medium" x-description="Heroicon name: mini/envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
@@ -38,13 +68,19 @@
         </div>
       </div>
 
-      <div class="contact-card rounded-lg bg-white shadow">
-        <div class="contact-card__body flex p-6 border-b border-gray-ultra-light">
+      <div class="contact-card rounded-lg bg-white shadow relative">
+        <div class="contact-card__body flex p-6 pb-2">
           <div class="contact-card__info flex-grow text-sm truncate">
-            <p class="font-medium">Jane Cooper</p>
-            <p class="text-gray mt-1 truncate">
-              Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
-            </p>
+            <template v-if="!isEdited">
+              <p class="font-medium">Jane Cooper</p>
+              <p class="text-gray mt-1 truncate">
+                Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
+              </p>
+            </template>
+            <template v-else>
+              <input ref="contactInput" type="text" value="Jane Cooper" class="block w-full font-medium">
+              <input type="text" value="Regional Paradigm Technician" class="block w-full text-gray mt-1">
+            </template>
           </div>
           <img
             class="contact-card__avatar w-[40px] h-[40px] object-cover ml-2 rounded-full shrink-0"
@@ -52,7 +88,31 @@
           >
         </div>
 
-        <div class="contact-card__footer flex text-sm font-medium text-gray-dark">
+        <div class="flex px-6 mb-4">
+          <span
+            v-if="isEdited"
+            class="text-gray font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="isEdited = false"
+          >
+            Cancel
+          </span>
+          <span
+            v-if="isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-4"
+            @click="isEdited = false"
+          >
+            Save
+          </span>
+          <span
+            v-if="!isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="selectEditView"
+          >
+            Edit
+          </span>
+        </div>
+
+        <div class="contact-card__footer flex text-sm font-medium text-gray-dark border-t border-gray-ultra-light">
           <div class="flex items-center justify-center flex-1 py-4 cursor-pointer hover:text-gray">
             <svg class="h-5 w-5 text-gray-medium" x-description="Heroicon name: mini/envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
@@ -73,13 +133,19 @@
         </div>
       </div>
 
-      <div class="contact-card rounded-lg bg-white shadow">
-        <div class="contact-card__body flex p-6 border-b border-gray-ultra-light">
+      <div class="contact-card rounded-lg bg-white shadow relative">
+        <div class="contact-card__body flex p-6 pb-2">
           <div class="contact-card__info flex-grow text-sm truncate">
-            <p class="font-medium">Jane Cooper</p>
-            <p class="text-gray mt-1 truncate">
-              Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
-            </p>
+            <template v-if="!isEdited">
+              <p class="font-medium">Jane Cooper</p>
+              <p class="text-gray mt-1 truncate">
+                Regional Paradigm Technician Regional Paradigm Technician Regional Paradigm Technician
+              </p>
+            </template>
+            <template v-else>
+              <input ref="contactInput" type="text" value="Jane Cooper" class="block w-full font-medium">
+              <input type="text" value="Regional Paradigm Technician" class="block w-full text-gray mt-1">
+            </template>
           </div>
           <img
             class="contact-card__avatar w-[40px] h-[40px] object-cover ml-2 rounded-full shrink-0"
@@ -87,7 +153,31 @@
           >
         </div>
 
-        <div class="contact-card__footer flex text-sm font-medium text-gray-dark">
+        <div class="flex px-6 mb-4">
+          <span
+            v-if="isEdited"
+            class="text-gray font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="isEdited = false"
+          >
+            Cancel
+          </span>
+          <span
+            v-if="isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-4"
+            @click="isEdited = false"
+          >
+            Save
+          </span>
+          <span
+            v-if="!isEdited"
+            class="text-blue-500 font-medium text-xs cursor-pointer hover:underline ml-auto"
+            @click="selectEditView"
+          >
+            Edit
+          </span>
+        </div>
+
+        <div class="contact-card__footer flex text-sm font-medium text-gray-dark border-t border-gray-ultra-light">
           <div class="flex items-center justify-center flex-1 py-4 cursor-pointer hover:text-gray">
             <svg class="h-5 w-5 text-gray-medium" x-description="Heroicon name: mini/envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
@@ -113,6 +203,14 @@
 
 <script lang="ts" setup>
 // YOUR CODE HERE
+const isEdited = ref(false)
+const contactInput = ref()
+
+const selectEditView = async () => {
+  isEdited.value = true
+  await nextTick()
+  contactInput.value.focus()
+}
 </script>
 
 <style lang="scss">
@@ -122,23 +220,6 @@
 }
 
 .contact-list {
-  display: flex;
-  max-width: 500px;
-  margin: auto;
-  gap: 20px;
-  padding: 20px 10px;
-  scroll-snap-type: x mandatory;
-  overflow-x: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  > div {
-    width: 300px;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-  }
-  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 </style>
