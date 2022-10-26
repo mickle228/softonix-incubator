@@ -2,7 +2,7 @@
   <div class="app-container">
     <h3 class="font-medium m-0">Contact list</h3>
 
-    <div class="contact-list gap-5 my-5 grid">
+    <div class="contact-list my-5">
       <div class="contact-card rounded-lg bg-white shadow">
         <div class="contact-card__body flex p-6 border-b border-gray-ultra-light">
           <div class="contact-card__info flex-grow text-sm truncate">
@@ -122,6 +122,23 @@
 }
 
 .contact-list {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  max-width: 500px;
+  margin: auto;
+  gap: 20px;
+  padding: 20px 10px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > div {
+    width: 300px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 </style>
