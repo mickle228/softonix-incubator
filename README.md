@@ -8,7 +8,7 @@ In this section we will dive deeper into comparison between modern CSS methodolo
 - SCSS & Responsive design patterns
 - Tailwind live coding
 - Modern CSS features / CanIUse
-- Home Work: recreate a page based on figma designs
+- **Home Work**: recreate a page based on figma designs
 
 ### Materials for the section
 - **Read**: what is Utility-First CSS concept [link](https://tailwindcss.com/docs/utility-first)
@@ -18,7 +18,7 @@ In this section we will dive deeper into comparison between modern CSS methodolo
 - **Additional materials**: Refactoring UI book, how to write perfect UI [link](https://www.refactoringui.com/?ref=sidebar)
 
 ### Video Material
-Youtube link: TBA
+[Youtube link](https://youtu.be/QVhY5Nl8Mvc)
 
 ### Section Playground
 - Branch name: [`section-4-intro-to-css`](https://github.com/Softonix/softonix-incubator/tree/section-4-intro-to-css)
@@ -36,4 +36,4 @@ Youtube link: TBA
 ### Homework
 This section includes homework. You need to fork this repo, finish homework in your repo, push your changes to origin and send URL with your forked repo and completed task to related person.
 
-- Homework task1: TBA
+- Homework task1: create HTML page with all Tailwind styles based on Figma file designs - [link](https://www.figma.com/file/xJF3K9M088ei5JOCa40nrM/Free-Travel-UI-Landing-Page-(Community)?node-id=2%3A2)
