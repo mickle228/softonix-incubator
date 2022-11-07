@@ -1,11 +1,27 @@
-# Softonix Incubator
+# Section #7 - Vue.js part 3
 
-### Sections list
+### Goal
+TBA
 
-- **Section #1 - tools & technologies** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-1-tooling)
-- **Section #2 - intro to modern js** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-2-intro-to-js)
-- **Section #3 - typescript** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-3-typescript)
-- **Section #4 - intro to css** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-4-intro-to-css)
-- **Section #5 - intro to Vue.js** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-5-intro-to-vue)
-- **Section #6 - Vue.js part 2** . [Branch link](https://github.com/Softonix/softonix-incubator/tree/section-6-vue-part-2)
 
+### Tech plan
+- TBA
+- **Home Work**: TBA
+
+### Materials for the section
+- **Read**: TBA
+
+### Video Material
+[Youtube link](TBA)
+
+### Section Playground
+- Branch name: [`section-6-vue-part-2`](https://github.com/Softonix/softonix-incubator/tree/section-6-vue-part-2)
+- Tag1: `#section-7-vue-part-3-start`
+  - TBA
+- Tag2: `#section-6-vue-part-3-end`
+  - TBA
+
+### Homework
+This section includes homework. You need to fork this repo, finish homework in your repo, push your changes to origin and send URL with your forked repo and completed task to related person.
+
+- TBA
