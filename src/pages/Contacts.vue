@@ -23,20 +23,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
-import { useContactsStore } from '@/store'
-import ContactItem from '@/components/ContactItem.vue'
-import AppButton from '@/components/AppButton.vue'
-import IconPlus from '@/components/icons/IconPlus.vue'
+const { $routeNames } = useGlobalProperties()
 
 const router = useRouter()
 const { contacts, updateContact, deleteContact } = useContactsStore()
 
 function createNewContact () {
-  router.push({ name: 'upsertContact', params: { contactId: 'new' } })
+  router.push({ name: $routeNames.upsertContact, params: { contactId: 'new' } })
 }
 
 function editContact (contactId: number) {
-  router.push({ name: 'upsertContact', params: { contactId } })
+  router.push({ name: $routeNames.upsertContact, params: { contactId } })
 }
 </script>
