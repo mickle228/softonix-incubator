@@ -1,5 +1,5 @@
 import 'vue-router'
-import { routeNames } from '@/router/route-names'
+import { routeNames } from '@/router'
 import { globalProperties } from '@/plugins'
 
 declare module 'vue-router' {
