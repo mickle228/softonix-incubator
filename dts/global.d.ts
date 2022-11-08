@@ -5,6 +5,7 @@ import { globalProperties } from '@/plugins'
 declare module 'vue-router' {
   interface RouteMeta {
     // todo: this is just an example. Please setup your own route meta params.
+    isProtected: boolean
   }
 }
 

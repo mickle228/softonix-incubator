@@ -33,9 +33,9 @@
 </template>
 
 <script lang="ts" setup>
-const { $routeNames } = useGlobalProperties()
 const router = useRouter()
 const route = useRoute()
+const { $routeNames } = useGlobalProperties()
 const { contacts, addContact, updateContact, deleteContact } = useContactsStore()
 
 const currentContact = computed(() => contacts.find(c => c.id === +route.params.contactId))
