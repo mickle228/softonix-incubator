@@ -29,8 +29,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { } from 'element-plus'
-
 const router = useRouter()
 const { $routeNames } = useGlobalProperties()
 
