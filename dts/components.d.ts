@@ -7,20 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Compute: typeof import('./../src/components/Compute.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElCard: typeof import('element-plus/es')['ElCard']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElForm: typeof import('element-plus/es')['ElForm']
-    ElFormItem: typeof import('element-plus/es')['ElFormItem']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElOption: typeof import('element-plus/es')['ElOption']
-    Portal: typeof import('./../src/plugins/portal/Portal.vue')['default']
-    PortalTarget: typeof import('./../src/plugins/portal/PortalTarget.vue')['default']
+    AppButton: typeof import('./../src/components/AppButton.vue')['default']
+    AppInput: typeof import('./../src/components/AppInput.vue')['default']
+    Card: typeof import('./../src/components/Card.vue')['default']
+    ContactItem: typeof import('./../src/views/contacts/components/ContactItem.vue')['default']
+    IconEnvelope: typeof import('./../src/components/icons/IconEnvelope.vue')['default']
+    IconPhone: typeof import('./../src/components/icons/IconPhone.vue')['default']
+    IconPlus: typeof import('./../src/components/icons/IconPlus.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-  }
-  export interface ComponentCustomProperties {
-    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
