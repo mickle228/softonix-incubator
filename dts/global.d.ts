@@ -12,6 +12,9 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     // todo: Here you define you global vue definitions.
     $routeNames: typeof routeNames
+
+    $elComponentSize: typeof globalProperties.$elComponentSize
+    $elComponentType: typeof globalProperties.$elComponentType
   }
 }
 
