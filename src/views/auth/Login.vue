@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-[500px] m-auto">
-    <el-card class="">
+    <el-card>
       <template #header>
         <p class="font-semibold text-xl">Login</p>
       </template>
@@ -29,8 +29,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { } from 'element-plus'
-
 const router = useRouter()
 const { $routeNames } = useGlobalProperties()
 
