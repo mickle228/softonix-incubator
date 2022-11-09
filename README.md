@@ -7,7 +7,7 @@ Gathering all our previous experience we will connect our project to Cloud Datab
 - Introduction to Supabase - cloud SQL database
 - Work with axios / instances / fetching data
 - Authentication JWT example: login, guard, onResponse, onRequest.
-- **Home Work**: implement register new user with Supabse and delete contact from contact card.
+- **Home Work**: implement register new user with Supabse and CRUD for contacts page.
 
 ### Materials for the section
 - **Read**: [What is Supabase?](https://supabase.com/)
@@ -16,7 +16,7 @@ Gathering all our previous experience we will connect our project to Cloud Datab
 - **Read**: [What is JWT](https://jwt.io/introduction)
 
 ### Video Material
-[Youtube link](TBA)
+[Youtube link](https://youtu.be/gixlqBBdHr4)
 
 ### Section Playground
 - Branch name: [`section-9-data-fetching`](https://github.com/Softonix/softonix-incubator/tree/section-9-data-fetching)
@@ -34,4 +34,6 @@ Gathering all our previous experience we will connect our project to Cloud Datab
 ### Homework
 This section includes homework. You need to fork this repo, finish homework in your repo, push your changes to origin and send URL with your forked repo and completed task to related person.
 
-- TBA
+- Task #1. Implement register new user functionality. Create method in `auth.service` and via store, conntect it to the `views/auth/Register.vue` view. Route name: `/register`.
+- Task #2. Implement basic CRUD for contacts. Create, Update, Delete functionality which should reuse current `contacts.store.ts` methods but execute them only successful API calls inside `contacts.service.ts`
+- Task #3*. Since login endpoint, return refresh token and time when accessToken will be expired, implement refresh token mechansim inside axios request interceptor. Check if token valid, if not refresh it and make original API call.
