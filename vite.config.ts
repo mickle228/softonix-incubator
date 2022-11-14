@@ -1,22 +1,48 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-import { IconsPluginCustom } from './vite.config.icons'
-import { ComponentsBuilder } from './vite.config.components'
-import { ImportsBuilder } from './vite.config.imports'
+/* import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' */
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
-    visualizer({
-      open: true
-    }),
-    IconsPluginCustom(),
-    ComponentsBuilder(),
-    ImportsBuilder()
+    vue()
+
+    /* CONFIGURATION FOR SCRIPTS AUTO-IMPORT */
+    /*     AutoImport({
+      dts: command === 'serve' && './dts/auto-imports.d.ts',
+
+      dirs: [
+        './src/composables',
+        './src/composables/http'
+      ],
+
+      eslintrc: {
+        enabled: true
+      },
+
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        'vue-i18n'
+      ],
+      resolvers: [ElementPlusResolver()]
+    }), */
+
+    /* CONFIGURATION FOR COMPONENTS AUTO-IMPORT */
+    /*     Components({
+      dts: command === 'serve' && './dts/components.d.ts',
+      dirs: [
+        'src/components',
+        'src/plugins/portal'
+      ],
+      resolvers: [ElementPlusResolver({ importStyle: false })]
+    }) */
   ],
 
   resolve: {
