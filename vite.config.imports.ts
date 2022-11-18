@@ -7,7 +7,6 @@ export const ImportsBuilder = () => AutoImport({
   dirs: [
     './src/composables',
     './src/composables/**/index.ts',
-    './src/api/*client.ts',
     './src/store/modules',
     './src/services',
     './src/views/**/*.store.ts',

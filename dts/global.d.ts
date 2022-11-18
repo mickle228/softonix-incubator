@@ -14,10 +14,4 @@ declare module '@vue/runtime-core' {
   }
 }
 
-declare global {
-  interface ObjectConstructor {
-    keys<T>(obj: T): Array<keyof T>
-  }
-}
-
 export { }

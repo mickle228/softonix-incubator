@@ -33,19 +33,10 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, computed } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { storeToRefs } from 'pinia'
-import { useContactsStore } from '@/store'
-import type { IContact } from '@/types'
-
-import AppInput from '@/components/AppInput.vue'
-import AppButton from '@/components/AppButton.vue'
-import IconPlus from '@/components/icons/IconPlus.vue'
-import Card from '@/components/Card.vue'
-
 const router = useRouter()
 const route = useRoute()
+
+const { $routeNames } = useGlobalProperties()
 
 const contactsStore = useContactsStore()
 const { contacts } = storeToRefs(contactsStore)
@@ -73,7 +64,7 @@ const isFormValid = computed(() => {
 
 function onDelete () {
   deleteContact(currentContact.value as IContact)
-  router.replace({ name: 'contacts' })
+  router.replace({ name: $routeNames.contacts })
 }
 
 function onSave () {
@@ -82,6 +73,6 @@ function onSave () {
   } else {
     addContact(contactForm)
   }
-  router.push({ name: 'contacts' })
+  router.push({ name: $routeNames.contacts })
 }
 </script>

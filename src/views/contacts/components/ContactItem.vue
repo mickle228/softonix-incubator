@@ -86,12 +86,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, nextTick, computed } from 'vue'
-import type { IContact } from '@/types'
-import IconEnvelope from '@/components/icons/IconEnvelope.vue'
-import IconPhone from '@/components/icons/IconPhone.vue'
-import Card from '@/components/Card.vue'
-
 const props = defineProps<{
   contact: IContact
 }>()
