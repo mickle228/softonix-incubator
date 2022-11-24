@@ -1,6 +1,7 @@
 import { readdirSync } from 'fs'
 import { join as pathJoin } from 'pathe'
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 /* CONFIGURATION FOR COMPONENTS AUTO-IMPORT */
 export const ComponentsBuilder = () => Components({
@@ -8,6 +9,9 @@ export const ComponentsBuilder = () => Components({
   dirs: [
     './src/components',
     ...buildViewsComponents()
+  ],
+  resolvers: [
+    ElementPlusResolver({ importStyle: false })
   ]
 })
 
