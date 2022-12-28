@@ -37,3 +37,10 @@ This section includes homework. You need to fork this repo, finish homework in y
 - Task #1. Implement register new user functionality. Create method in `auth.service` and via store, conntect it to the `views/auth/Register.vue` view. Route name: `/register`.
 - Task #2. Implement basic CRUD for contacts. Create, Update, Delete functionality which should reuse current `contacts.store.ts` methods but execute them only successful API calls inside `contacts.service.ts`
 - Task #3*. Since login endpoint, return refresh token and time when accessToken will be expired, implement refresh token mechansim inside axios request interceptor. Check if token valid, if not refresh it and make original API call.
+
+**API Definitions:**
+- Register user: POST - `auth/v1/signup`, payload: `{ email: string, password: string }`
+- Refresh token: POST - `auth/v1/token?grant_type=refresh_token`, payload: `{ refresh_token: string }`
+- Create contact: POST - `rest/v1/contacts`, payload: `{ name: string, description: string }`
+- Update contact: PATCH - `rest/v1/contacts?id=eq.${contact.id}`, payload: `{ id, name, description }`
+- Delete contact: DELETE - `rest/v1/contacts?id=eq.${contact.id}`

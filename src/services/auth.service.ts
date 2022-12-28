@@ -4,7 +4,7 @@ class AuthService {
     return useHttp.post('auth/v1/token?grant_type=password', payload)
   }
 
-  // auth/v1/signup
+  // POST: auth/v1/signup, Payload: { email: string, password: string }
   register () {
     return {}
   }
