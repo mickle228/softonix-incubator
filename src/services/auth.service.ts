@@ -13,6 +13,10 @@ class AuthService {
   refreshToken () {
     return ''
   }
+
+  getUser () {
+    return useHttp.get('auth/v1/user')
+  }
 }
 
 export const authService = new AuthService()

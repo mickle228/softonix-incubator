@@ -1,7 +1,9 @@
 class ContactsService {
   // rest/v1/contacts
   getContacts () {
-    return useHttp.get<IContact[]>('rest/v1/contacts')
+    const authStore = useAuthStore()
+
+    return useHttp.get<IContact[]>('rest/v1/contacts', { params: { user_id: `eq.${authStore.user?.id}` } })
   }
 }
 

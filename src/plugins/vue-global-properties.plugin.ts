@@ -9,6 +9,7 @@ export const globalProperties = {
     default: 'default',
     large: 'large'
   },
+
   $elComponentType: {
     primary: 'primary',
     success: 'success',
