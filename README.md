@@ -55,7 +55,7 @@ This section includes homework. You need to fork this repo, finish homework in y
 - Implement contact creation.
   - Add ‘Add contact’ button next to the page title.
   - By clicking on the ‘Add contact’ button the new empty contact card should be inserted at the beginning of the list.
-  - The new contact form should include name, description and image fields.
+  - The new contact form should include name, description and image URL fields.
   - By clicking on a cancel button during a contact creation, it should be removed from the list.
   - Validation should work for both creating and editing a contact
 
