@@ -4,7 +4,7 @@
 This section represents onboarding to the tools and technologies Softonix is used for building the projects. You need to understand how correctly chosen tools can speed up the development time. What is the proper way of using IDE, learn shortcuts, plugins and extensions. You will understand the skeleton for modern web development tooling: Node.js and it’s package manager: NPM
 
 ### Tech plan
-- IDE Workflow (Eslint, Volar and VSCode config)
+- IDE Workflow (Eslint and VSCode config)
 - NPM
 - ESLint
 - Tech stack, base project intro
