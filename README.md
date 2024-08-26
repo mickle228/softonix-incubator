@@ -41,7 +41,7 @@ This section includes homework. You need to fork this repo, finish homework in y
 - Create 'roles' variable in the contacts.store.ts and describe it as string[].
 - Add 'role' field to the contacts. It should be string
 - Implement searching of contacts by name and description fields.
-- Search field should be a custom input component. It should work with v-model.
+- Search field should be a custom component: `SearchInput.vue`. It should use native HTML input element and work with v-model using defineModel.
 - Implement filtering of contacts by role field.
 - Roles filter field should be a custom multi-select component. It should receive a list as a prop and work with v-model
 - Implement sorting of contacts by name field. Sorting should work in 3 ways: default, ascending, descending
