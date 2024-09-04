@@ -1,8 +1,9 @@
 import type { Plugin } from 'vue'
-import { routeNames } from '@/router/route-names'
+import { routeNames } from '@/router'
 
 export const globalProperties = {
   $routeNames: routeNames,
+
   $elComponentSize: {
     small: 'small',
     default: 'default',

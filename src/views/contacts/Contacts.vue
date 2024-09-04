@@ -12,7 +12,7 @@
     <el-button
       class="!ml-0"
       :type="$elComponentType.danger"
-      @click="$router.replace({ name: $routeNames.login })"
+      @click="logout"
     >
       Logout
     </el-button>
@@ -30,13 +30,15 @@
     />
   </div>
 </template>
+
 <script lang="ts" setup>
 const router = useRouter()
 const { $routeNames } = useGlobalProperties()
 
+const { logout } = useAuthStore()
 const contactsStore = useContactsStore()
+const { getContacts, updateContact, deleteContact } = contactsStore
 const { contacts } = storeToRefs(contactsStore)
-const { updateContact, deleteContact } = contactsStore
 
 function createNewContact () {
   router.push({ name: $routeNames.upsertContact, params: { contactId: 'new' } })
@@ -45,4 +47,9 @@ function createNewContact () {
 function editContact (contactId: number) {
   router.push({ name: $routeNames.upsertContact, params: { contactId } })
 }
+
+onMounted(() => {
+  // get data for the page
+  getContacts()
+})
 </script>

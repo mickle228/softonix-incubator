@@ -7,12 +7,29 @@ const instance = axios.create({
   }
 })
 
-instance.interceptors.response.use(
-  res => res
+instance.interceptors.request.use(
+  config => {
+    const { accessToken } = useAuthStore()
+
+    if (accessToken) {
+      config.headers.authorization = `Bearer ${accessToken}`
+    }
+    return config
+  }
 )
 
-instance.interceptors.request.use(
-  config => config
+instance.interceptors.response.use(
+  res => res.data,
+  error => {
+    console.log(error)
+
+    const { logout } = useAuthStore()
+    if (error.response.status === 401) {
+      logout()
+    }
+
+    return Promise.reject(error)
+  }
 )
 
 export const useHttp = instance

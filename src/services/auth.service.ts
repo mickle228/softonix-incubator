@@ -1,16 +1,11 @@
 class AuthService {
   // auth/v1/token?grant_type=password
-  login () {
-    return useHttp.post('auth/v1/token?grant_type=password', { email: 'voolve@gmail.com', password: '11111111' })
+  login (payload: ILoginRequest) {
+    return useHttp.post('auth/v1/token?grant_type=password', payload)
   }
 
-  // auth/v1/signup
+  // POST: auth/v1/signup, Payload: { email: string, password: string }
   register () {
-    return {}
-  }
-
-  // auth/v1/logout
-  logout () {
     return {}
   }
 
