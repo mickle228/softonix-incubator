@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 import { ComponentsBuilder } from './vite.config.components'
 import { ImportsBuilder } from './vite.config.imports'
@@ -11,7 +12,11 @@ export default defineConfig({
   plugins: [
     vue(),
     ComponentsBuilder(),
-    ImportsBuilder()
+    ImportsBuilder(),
+    visualizer({
+      open: false,
+      gzipSize: true
+    })
   ],
 
   resolve: {

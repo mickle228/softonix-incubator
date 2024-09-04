@@ -25,7 +25,7 @@
       border border-gray-medium bg-gray-ultra-light"
       >
         <span
-          v-if="imageHasError || !contact.image"
+          v-if="imageHasError"
           class="font-medium uppercase"
         >{{ nameAbbrv }}
         </span>

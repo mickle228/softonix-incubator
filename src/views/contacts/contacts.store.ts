@@ -2,7 +2,7 @@ export const useContactsStore = defineStore('contactsStore', () => {
   const contacts = ref<IContact[]>([])
 
   const getContacts = () => {
-    if (contacts.value.length) return
+    if (contacts.value.length) return Promise.resolve()
 
     return contactsService.getContacts()
       .then(res => {

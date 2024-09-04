@@ -18,6 +18,8 @@
     </el-button>
   </div>
 
+  <!-- <AsyncExample v-if="!loading" /> -->
+
   <div class="grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] grid gap-5 my-5">
     <ContactItem
       v-for="contact in contacts"
@@ -33,12 +35,15 @@
 
 <script lang="ts" setup>
 const router = useRouter()
+// const AsyncExample = defineAsyncComponent(() => import('./components/AsyncExample.vue'))
+
 const { $routeNames } = useGlobalProperties()
 
 const { logout } = useAuthStore()
 const contactsStore = useContactsStore()
 const { getContacts, updateContact, deleteContact } = contactsStore
 const { contacts } = storeToRefs(contactsStore)
+const loading = ref(true)
 
 function createNewContact () {
   router.push({ name: $routeNames.upsertContact, params: { contactId: 'new' } })
@@ -51,5 +56,6 @@ function editContact (contactId: number) {
 onMounted(() => {
   // get data for the page
   getContacts()
+    .finally(() => (loading.value = false))
 })
 </script>
