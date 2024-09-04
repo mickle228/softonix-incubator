@@ -142,6 +142,7 @@
     "useAsyncQueue": true,
     "useAsyncState": true,
     "useAttrs": true,
+    "useAuthStore": true,
     "useContactsStore": true,
     "useCssModule": true,
     "useCssVar": true,
@@ -225,6 +226,10 @@
     "requestErrorInterceptor": true,
     "requestInterceptor": true,
     "responseInterceptor": true,
-    "useApiClient": true
+    "useApiClient": true,
+    "authService": true,
+    "contactsService": true,
+    "useHttp": true,
+    "useLink": true
   }
 }

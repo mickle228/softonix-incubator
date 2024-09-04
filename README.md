@@ -1,48 +1,46 @@
-# Section #8 - Element Plus
+# Section #9 - Data fetching
 
 ### Goal
-The goal of this section is to introduce you Element Plus ui library, install and configure it in conjunction with Softonix guidelines.
-
+Gathering all our previous experience we will connect our project to Cloud Database. We will learn REST API patterns, understand the difference between request methods, how to debug our API calls, and how to arrange our API services into scalable architecture.
 
 ### Tech plan
-- Setup and configure Element Plus library
-- Create login page using Element Plus components
-- Add validation to the login form
-- Add custom composable for Element Plus form
-- **Home Work**: 
-  - Rewrite all the components using Element Plus
-  - Create 2 different views of the contacts list (card, table)
+- Introduction to Supabase - cloud SQL database
+- Work with axios / instances / fetching data
+- Authentication JWT example: login, guard, onResponse, onRequest.
+- **Home Work**: implement register new user with Supabse and CRUD for contacts page.
 
 ### Materials for the section
-- **Practice**: [`Element Plus library`](https://element-plus.org/en-US/)
-- **Read**: [`unplugin-vue-components resolvers`](https://github.com/antfu/unplugin-vue-components#importing-from-ui-libraries)
+- **Read**: [What is Supabase?](https://supabase.com/)
+- **Read**: [Axios vs Fetch](https://blog.logrocket.com/axios-vs-fetch-best-http-requests/)
+- **Read**: [Axios interceptors example](https://blog.bitsrc.io/setting-up-axios-interceptors-for-all-http-calls-in-an-application-71bc2c636e4e)
+- **Read**: [What is JWT](https://jwt.io/introduction)
 
 ### Video Material
-[Youtube link](https://youtu.be/Mn4vzc5eHbI)
+[Youtube link](https://youtu.be/gixlqBBdHr4)
 
 ### Section Playground
-- Branch name: [`section-8-element-plus`](https://github.com/Softonix/softonix-incubator/tree/section-8-element-plus)
-- Tag1: `#section-8-element-plus-start`
-  - Represents an application from previous lecture #7
-- Tag2: `#section-8-element-plus-end`
-  - Installed and configured Element Plus library
-  - Added login page with form validation
-  - Added composable for Element Plus form component
-
+- Branch name: [`section-9-data-fetching`](https://github.com/Softonix/softonix-incubator/tree/section-9-data-fetching)
+- Tag1: `#section-9-data-fetching-start`
+  - Applicate state after section #8
+  - Installed Axios package into the project
+  - Setup default http service example with Axios
+  - Setup base auth.store & auth.service for login endpoint and storing token
+- Tag2: `#section-9-data-fetching-end`
+  - Explain how login endpoint works with Supabase and what JWT token means
+  - Connect login page to login store action
+  - Add getContacts method into contact.service and pass token via headers
+  - Create Axios request & response interceptors
 
 ### Homework
-- Task 1:
-  Rewrite all the components (button, input, card, etc) using Element Plus library.
-- Task 2:
-  On the contacts page create 2 tabs which will contain different views of the contacts list. 
-  - First tab should have a card view (as we currently have)
-  - Second tab should have a table view.
-  - Please use Element Plus library to complete the task
-  - For tabs representation use Tabs (el-tabs) component
-  - For the table view use Table (el-table) component
-  - Table view should have 4 columns (image, name, description, actions)
-  - Buttons edit, delete, cancel, save should be fixed to the right of the table
-  - Table view should work similarly to the card view
-    - By clicking on the edit button you should show 2 inputs for name and description of an exact column
-    - Clicking save, cancel, delete should work exactly the same as in the card view
-    - By clicking on a table row you should be redirected to the UpsertContact page
+This section includes homework. You need to fork this repo, finish homework in your repo, push your changes to origin and send URL with your forked repo and completed task to related person.
+
+- Task #1. Implement register new user functionality. Create method in `auth.service` and via store, conntect it to the `views/auth/Register.vue` view. Route name: `/register`.
+- Task #2. Implement basic CRUD for contacts. Create, Update, Delete functionality which should reuse current `contacts.store.ts` methods but execute them only successful API calls inside `contacts.service.ts`
+- Task #3*. Since login endpoint, return refresh token and time when accessToken will be expired, implement refresh token mechansim inside axios request interceptor. Check if token valid, if not refresh it and make original API call.
+
+**API Definitions:**
+- Register user: POST - `auth/v1/signup`, payload: `{ email: string, password: string }`
+- Refresh token: POST - `auth/v1/token?grant_type=refresh_token`, payload: `{ refresh_token: string }`
+- Create contact: POST - `rest/v1/contacts`, payload: `{ name: string, description: string }`
+- Update contact: PATCH - `rest/v1/contacts?id=eq.${contact.id}`, payload: `{ id, name, description }`
+- Delete contact: DELETE - `rest/v1/contacts?id=eq.${contact.id}`
