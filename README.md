@@ -36,3 +36,6 @@ This section includes homework. You need to fork this repo, finish homework in y
 - [Homework exercise2](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-2.ts)
 - [Homework exercise3](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-3.ts)
 - [Homework exercise4](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-4.ts)
+- [Homework exercise5](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-5.ts)
+- [Homework exercise6](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-6.ts)
+- [Homework exercise7](https://github.com/Softonix/softonix-incubator/blob/section-3-typescript/src/homework/exercise-7.ts)
