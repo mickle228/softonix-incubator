@@ -4,21 +4,29 @@
 // Функція `arrayHandler` приймає аргументом значення з поточної ітерації масиву `array`
 
 export const arrayHandler = (num) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(`Resolved: ${num}`)
-      resolve(num)
+      if (num % 2 === 0) {
+        reject(new Error(`Error with number: ${num}`))
+      } else {
+        console.log(`Resolved: ${num}`)
+        resolve(num)
+      }
     }, num * 1000)
   })
 }
 
 const array = [1, 2, 3, 4, 5]
 
-async function handleArraySequentially (array) {
+async function handleArray (array) {
   for (let i = 0; i < array.length; i++) {
-    await arrayHandler(array[i])
+    try {
+      await arrayHandler(array[i])
+    } catch (error) {
+      console.error(error)
+    }
   }
   console.log('All promises done;)')
 }
 
-handleArraySequentially(array)
+handleArray(array)
