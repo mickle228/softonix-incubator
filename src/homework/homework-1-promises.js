@@ -6,6 +6,7 @@
 export const arrayHandler = (num) => {
   return new Promise((resolve) => {
     setTimeout(() => {
+      console.log(`Resolved: ${num}`)
       resolve(num)
     }, num * 1000)
   })
@@ -13,4 +14,11 @@ export const arrayHandler = (num) => {
 
 const array = [1, 2, 3, 4, 5]
 
-console.log(array)
+async function handleArraySequentially (array) {
+  for (let i = 0; i < array.length; i++) {
+    await arrayHandler(array[i])
+  }
+  console.log('All promises done;)')
+}
+
+handleArraySequentially(array)
