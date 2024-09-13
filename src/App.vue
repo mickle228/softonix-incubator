@@ -29,6 +29,10 @@
 <script lang="ts" setup>
 import { countryService } from '@/examples/data-preparation'
 import { intersectionService } from '@/examples/intersection'
+import { result } from '@/homework/homework-1-promises.js'
+
+const array = [1, 2, 3, 4, 5]
+result(array)
 
 const countries = ref()
 const cities = ref()

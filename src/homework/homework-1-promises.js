@@ -14,7 +14,7 @@ export const arrayHandler = (num) => {
 
 const array = [1, 2, 3, 4, 5]
 
-async function handleArray(array) {
+async function handleArray (array) {
   for (let i = 0; i < array.length; i++) {
     try {
       await arrayHandler(array[i])
@@ -25,4 +25,4 @@ async function handleArray(array) {
   console.log('All promises done;)')
 }
 
-handleArray(array)
+export const result = handleArray(array)
