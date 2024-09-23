@@ -1,12 +1,21 @@
 <template>
   <div class="max-w-[1440px] p-6">
-    <h3 class="font-medium m-0">Contact list</h3>
+    <div class="flex items-center">
+      <h3 class="font-medium m-0">Contact list</h3>
+      <button
+        class="ml-4 px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+        @click="addContact"
+      >
+        Add Contact
+      </button>
+    </div>
 
-    <div class="contact-list grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] grid gap-5 my-5">
+    <div class="items-start grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] grid gap-5 my-5">
       <ContactItem
         v-for="(contact, index) in contacts"
         :key="contact.id"
         :contact="contact"
+        :isNew="!contact.name && !contact.description"
         @delete="deleteContact(index)"
         @save="onContactSave($event, index)"
       />
@@ -39,6 +48,16 @@ const contacts = ref<IContact[]>([
     image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60'
   }
 ])
+
+function addContact () {
+  const newContact: IContact = {
+    id: Date.now(),
+    name: '',
+    description: '',
+    image: ''
+  }
+  contacts.value.unshift(newContact)
+}
 
 function deleteContact (index: number) {
   contacts.value.splice(index, 1)
