@@ -100,7 +100,7 @@ const emit = defineEmits(['delete', 'save'])
 
 const inputRef = ref<HTMLInputElement>()
 
-const localContact = ref<Omit<IContact, 'id'>>({
+const localContact = ref<Omit<IContact, 'id'| 'role'>>({
   name: '',
   description: '',
   image: ''
