@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 
 import Contacts from '@/views/contacts/Contacts.vue'
 import UpsertContact from '@/views/contacts/UpsertContact.vue'
+import type { IContact } from '@/views/contacts/contacts'
 
 export const contactRouteNames = {
   contacts: 'contacts',
@@ -21,7 +22,7 @@ export const contactsRoutes: RouteRecordRaw[] = [
     beforeEnter (to, from, next) {
       const contactsStore = useContactsStore()
       const { contacts } = storeToRefs(contactsStore)
-      if (to.params.contactId === 'new' || contacts.value.find(c => c.id === +to.params.contactId)) {
+      if (to.params.contactId === 'new' || contacts.value.find((c: IContact) => c.id === +to.params.contactId)) {
         next()
       } else {
         next({ name: 'contacts' })

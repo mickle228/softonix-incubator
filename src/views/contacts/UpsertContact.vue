@@ -33,6 +33,7 @@
 </template>
 
 <script lang="ts" setup>
+import { type IContact } from '@/views/contacts/contacts'
 const router = useRouter()
 const route = useRoute()
 

@@ -1,3 +1,5 @@
+import type { IContact } from '@/views/contacts/contacts'
+
 export const useContactsStore = defineStore('contactsStore', () => {
   const contacts = ref<IContact[]>([
     {

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex items-center gap-4 mt-4">
     <h3 class="font-medium m-0">Contact list</h3>
 
     <AppButton @click="createNewContact">
