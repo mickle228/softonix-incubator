@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const { disabled } = defineProps<{
   disabled?: boolean
 }>()
 </script>

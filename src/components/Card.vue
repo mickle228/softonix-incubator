@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const { title } = defineProps<{
   title?: string
 }>()
 </script>

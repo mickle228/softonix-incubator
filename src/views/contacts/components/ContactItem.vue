@@ -86,13 +86,13 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
+const { contact } = defineProps<{
   contact: IContact
 }>()
 
 const emit = defineEmits(['delete', 'save'])
 
-const inputRef = ref<HTMLInputElement>()
+const inputRef = ref<HTMLInputElement | null>(null)
 
 const localContact = ref<Omit<IContact, 'id'>>({
   name: '',
@@ -101,7 +101,7 @@ const localContact = ref<Omit<IContact, 'id'>>({
 })
 
 const nameAbbrv = computed(() => {
-  return props.contact.name.split(' ').reduce((acc, cur) => {
+  return contact.name.split(' ').reduce((acc, cur) => {
     if (acc.length < 2) {
       acc = acc.concat(cur[0])
     }
@@ -113,7 +113,7 @@ const editMode = ref(false)
 
 async function triggerEditMode () {
   editMode.value = true
-  localContact.value = { ...props.contact }
+  localContact.value = { ...contact }
   await nextTick()
   inputRef.value?.focus()
 }

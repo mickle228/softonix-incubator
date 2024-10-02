@@ -225,6 +225,14 @@
     "requestErrorInterceptor": true,
     "requestInterceptor": true,
     "responseInterceptor": true,
-    "useApiClient": true
+    "useApiClient": true,
+    "DirectiveBinding": true,
+    "MaybeRef": true,
+    "MaybeRefOrGetter": true,
+    "onWatcherCleanup": true,
+    "useId": true,
+    "useLink": true,
+    "useModel": true,
+    "useTemplateRef": true
   }
 }
