@@ -16,7 +16,7 @@
             :departments="filteredDepartments"
             @update:selectedDepartments="(value) => selectedDepartments = value"
           />
-        </div> 
+        </div>
         <div class="mb-4">
           <p v-if="selectedDepartments.length > 0">
             Showing {{ filteredJobs.length }} out of {{ totalJobsCount }} job openings
@@ -86,7 +86,7 @@ const groupedJobs = computed<IJobGroup[]>((): IJobGroup[] => {
     : groupJobsBySelectedDepartments(filteredJobs.value)
 })
 
-function groupJobsByDepartments(jobs: IJobOpening[]): IJobGroup[] {
+function groupJobsByDepartments (jobs: IJobOpening[]): IJobGroup[] {
   const grouped: Record<string, IJobGroup> = {}
   const othersGroup: IJobGroup = reactive({ name: 'Others', jobs: [], showMore: true, showAll: false })
 
@@ -117,7 +117,7 @@ function groupJobsByDepartments(jobs: IJobOpening[]): IJobGroup[] {
   return groupedArray
 }
 
-function groupJobsBySelectedDepartments(jobs: IJobOpening[]): IJobGroup[] {
+function groupJobsBySelectedDepartments (jobs: IJobOpening[]): IJobGroup[] {
   const grouped: Record<string, IJobGroup> = {}
 
   jobs.forEach((job: IJobOpening) => {
@@ -143,16 +143,16 @@ function groupJobsBySelectedDepartments(jobs: IJobOpening[]): IJobGroup[] {
 
 const totalJobsCount = computed(() => jobs.length)
 
-function getDepartmentName(departmentValue: string): string | null {
+function getDepartmentName (departmentValue: string): string | null {
   const department = departmentsList.find(dept => dept.value === departmentValue)
   return department ? department.name : null
 }
 
-function toggleSeeMore(group: IJobGroup) {
+function toggleSeeMore (group: IJobGroup) {
   group.showMore = !group.showMore
 }
 
-function toggleSeeAll(group: IJobGroup) {
+function toggleSeeAll (group: IJobGroup) {
   group.showAll = !group.showAll
 }
 </script>
