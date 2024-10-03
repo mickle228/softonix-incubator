@@ -5,8 +5,16 @@
     ),
   ),
   $button-border-radius: (
-    'default': 20px,
-  )
+    'default': 14px,
+  ),
+  $input: (
+    'text-color': getCssVar('text-color-regular')
+  ),
+  $card:
+  (
+    'border-radius': 8px,
+    'padding': 0px,
+  ),
 );
 
 @use "element-plus/theme-chalk/src/base";

@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-[500px] m-auto">
-    <el-card>
+    <el-card body-style="padding: 20px">
       <template #header>
-        <p class="font-semibold text-xl">Login</p>
+        <p class="font-semibold text-xl p-5">Login</p>
       </template>
 
       <el-form

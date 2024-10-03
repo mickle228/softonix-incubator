@@ -138,6 +138,7 @@ declare global {
   const useAsyncQueue: typeof import('@vueuse/core')['useAsyncQueue']
   const useAsyncState: typeof import('@vueuse/core')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useContactActions: typeof import('../src/composables/useContactActions')['useContactActions']
   const useContactsStore: typeof import('../src/views/contacts/contacts.store')['useContactsStore']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVar: typeof import('@vueuse/core')['useCssVar']

@@ -233,6 +233,7 @@
     "useId": true,
     "useLink": true,
     "useModel": true,
-    "useTemplateRef": true
+    "useTemplateRef": true,
+    "useContactActions": true
   }
 }

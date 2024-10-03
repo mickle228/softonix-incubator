@@ -1,18 +1,28 @@
 <template>
-  <input
+  <el-input
+    v-model="inputValue"
     type="text"
     :placeholder="placeholder"
-    :value="modelValue"
-    class="rounded-md font-medium border border-gray-medium focus:border-gray-dark text-sm p-2 block w-full"
-    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-  >
+    size="large"
+    class="font-medium text-black"
+  />
 </template>
 
 <script lang="ts" setup>
-const { placeholder, modelValue } = defineProps<{
+
+const props = defineProps<{
   placeholder?: string
   modelValue?: string
 }>()
 
-defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue'])
+const inputValue = ref(props.modelValue)
+
+watch(() => props.modelValue, (newValue) => {
+  inputValue.value = newValue
+})
+
+watch(inputValue, (newValue) => {
+  emit('update:modelValue', newValue)
+})
 </script>
