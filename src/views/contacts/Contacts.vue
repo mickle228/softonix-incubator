@@ -17,7 +17,7 @@
       Logout
     </el-button>
   </div>
-
+  <h1 v-if="contactsLenght == 0" class="mt-5 flex justify-center">There is no users, create them</h1>
   <div class="grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] grid gap-5 my-5">
     <ContactItem
       v-for="contact in contacts"
@@ -40,6 +40,10 @@ const contactsStore = useContactsStore()
 const { getContacts, updateContact, deleteContact } = contactsStore
 const { contacts } = storeToRefs(contactsStore)
 
+const contactsLenght = computed(() => {
+  return contacts.value.length
+})
+
 function createNewContact () {
   router.push({ name: $routeNames.upsertContact, params: { contactId: 'new' } })
 }
@@ -49,7 +53,6 @@ function editContact (contactId: number) {
 }
 
 onMounted(() => {
-  // get data for the page
   getContacts()
 })
 </script>

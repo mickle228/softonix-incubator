@@ -66,12 +66,25 @@ function onDelete () {
   router.replace({ name: $routeNames.contacts })
 }
 
-function onSave () {
-  if (currentContact.value) {
-    updateContact(contactForm)
-  } else {
-    addContact(contactForm)
+async function onSave () {
+  const contactData = {
+    name: contactForm.name,
+    description: contactForm.description
   }
+
+  if (currentContact.value) {
+    const updatedContact: IContact = {
+      ...currentContact.value,
+      ...contactData
+    }
+    await updateContact(updatedContact)
+  } else {
+    await addContact(contactData)
+  }
+
+  await contactsStore.getContacts()
+
   router.push({ name: $routeNames.contacts })
 }
+
 </script>

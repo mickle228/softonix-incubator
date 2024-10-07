@@ -230,6 +230,16 @@
     "authService": true,
     "contactsService": true,
     "useHttp": true,
-    "useLink": true
+    "useLink": true,
+    "DirectiveBinding": true,
+    "MaybeRef": true,
+    "MaybeRefOrGetter": true,
+    "onWatcherCleanup": true,
+    "useId": true,
+    "useModel": true,
+    "useTemplateRef": true,
+    "useConfirmPasswordRule": true,
+    "accessTokenKey": true,
+    "refreshTokenKey": true
   }
 }

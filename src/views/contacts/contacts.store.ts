@@ -1,3 +1,6 @@
+import { defineStore } from 'pinia'
+import { contactsService } from '@/services/contacts.service'
+
 export const useContactsStore = defineStore('contactsStore', () => {
   const contacts = ref<IContact[]>([])
 
@@ -10,18 +13,34 @@ export const useContactsStore = defineStore('contactsStore', () => {
       })
   }
 
-  function addContact (contact: IContact) {
-    contacts.value.push(contact)
+  async function addContact (contact: IContact) {
+    try {
+      await contactsService.createContact(contact)
+      const data = await contactsService.getContacts()
+      contacts.value = data
+    } catch (error) {
+      error.value = error.message
+    }
   }
 
-  function updateContact (contact: IContact) {
-    const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
-    contacts.value[currentIndex] = { ...contact }
+  async function updateContact (contact: IContact) {
+    try {
+      await contactsService.updateContact(contact)
+      const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
+      contacts.value[currentIndex] = { ...contact }
+    } catch (error) {
+      console.error('Error updating contact:', error)
+    }
   }
 
-  function deleteContact (contact: IContact) {
-    const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
-    contacts.value.splice(currentIndex, 1)
+  async function deleteContact (contact: IContact) {
+    try {
+      const currentIndex = contacts.value.findIndex(c => c.id === contact.id)
+      await contactsService.deleteContact(contact.id)
+      contacts.value.splice(currentIndex, 1)
+    } catch (error) {
+      console.error('Error deleting contact:', error)
+    }
   }
 
   return {

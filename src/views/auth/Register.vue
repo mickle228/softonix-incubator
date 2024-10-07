@@ -2,7 +2,7 @@
   <div class="max-w-[500px] m-auto">
     <el-card v-loading="loading">
       <template #header>
-        <p class="font-semibold text-xl">Login</p>
+        <p class="font-semibold text-xl">Register</p>
       </template>
 
       <el-form
@@ -19,15 +19,15 @@
         <el-form-item label="Password" prop="password">
           <el-input v-model="formModel.password" type="password" />
         </el-form-item>
-        <p v-if="error" class="text-red-500">Invalid email or password</p>
+
         <el-button native-type="submit" :type="$elComponentType.primary">
-          Login
+          Register
         </el-button>
       </el-form>
       <p class="flex justify-center">
-        Not registered yet?
-        <router-link :to="{ name: 'register' }" class="text-blue-500 underline hover:text-blue-700 ml-1">
-          Register
+        Already have an account?
+        <router-link :to="{ name: 'login' }" class="text-blue-500 underline hover:text-blue-700 ml-1">
+          Login
         </router-link>
       </p>
     </el-card>
@@ -37,7 +37,7 @@
 <script lang="ts" setup>
 const router = useRouter()
 const { $routeNames } = useGlobalProperties()
-const { login } = useAuthStore()
+const { register } = useAuthStore()
 
 const formRef = useElFormRef()
 
@@ -46,7 +46,6 @@ const formModel = useElFormModel({
   password: ''
 })
 const loading = ref(false)
-const error = ref(false)
 
 const formRules = useElFormRules({
   email: [useRequiredRule(), useEmailRule()],
@@ -57,18 +56,11 @@ function submit () {
   formRef.value?.validate(isValid => {
     if (isValid) {
       loading.value = true
-      error.value = false
 
-      login(formModel)
+      register(formModel)
         .then(() => router.push({ name: $routeNames.contacts }))
-        .catch(() => {
-          error.value = true
-        })
-        .finally(() => {
-          loading.value = false
-        })
+        .then(() => (loading.value = false))
     }
   })
 }
-
 </script>

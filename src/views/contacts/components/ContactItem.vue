@@ -101,7 +101,7 @@ const localContact = ref<Omit<IContact, 'id'>>({
 })
 
 const nameAbbrv = computed(() => {
-  return props.contact.name.split(' ').reduce((acc, cur) => {
+  return props.contact?.name?.split(' ').reduce((acc, cur) => {
     if (acc.length < 2) {
       acc = acc.concat(cur[0])
     }
