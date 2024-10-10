@@ -1,5 +1,5 @@
 <template>
-  <div ref="imgContainer" class="relative w-full overflow-hidden">
+  <div ref="imgContainer">
     <div v-if="loading" class="w-[600px] h-[400px] bg-gray-200 animate-pulse" />
     <img
       v-if="loadedSrc && !error"
@@ -10,10 +10,8 @@
     >
     <div
       v-if="error"
-      :style="{ height: `${imageHeight}px`, width:`${imageWidth}px` }"
-      class="flex justify-center items-center bg-slate-400"
     >
-      <span class="text-gray-500">No Image Available</span>
+      <img width="24" height="24" src="https://img.icons8.com/external-those-icons-fill-those-icons/24/external-Alert-image-and-image-files-those-icons-fill-those-icons.png" alt="external-Alert-image-and-image-files-those-icons-fill-those-icons">
     </div>
   </div>
 </template>
@@ -51,8 +49,8 @@ const loadImage = () => {
   img.onerror = () => {
     loading.value = false
     error.value = true
-    imageHeight.value = 400
-    imageWidth.value = 600
+    imageHeight.value = (imgContainer.value as HTMLImageElement).naturalHeight
+    imageWidth.value = (imgContainer.value as HTMLImageElement).naturalWidth
   }
 }
 
