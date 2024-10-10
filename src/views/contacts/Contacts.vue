@@ -19,7 +19,6 @@
   </div>
 
   <AsyncExample v-if="!loading" />
-
   <div class="grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] grid gap-5 my-5">
     <ContactItem
       v-for="contact in contacts"
@@ -31,6 +30,16 @@
       @save="updateContact"
     />
   </div>
+  <LazyImg
+    src="https://img.frecom/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
+    alt="Nature"
+  />
+
+  <LazyImg
+    class="mt-[1000px]"
+    src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80"
+    alt="Nature"
+  />
 </template>
 
 <script lang="ts" setup>
